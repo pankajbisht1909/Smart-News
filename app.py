@@ -42,7 +42,7 @@ def get_base64_of_image(image_path):
     with open(image_path, "rb") as img_file:
         return base64.b64encode(img_file.read()).decode()
 # Usage:
-image_base64 = get_base64_of_image("pexels-pixabay-158651.jpg")
+image_base64 = get_base64_of_image("assets/pexels-pixabay-158651.jpg")
 
 # Function to extract keywords (nouns/important words) from a text
 def extract_keywords(text):
@@ -217,7 +217,7 @@ def display_news_from_online(news_data, news_quantity):
 
 # Main App
 def run():
-    image_base64 = get_base64_of_image("C:/smart/pexels-pixabay-158651.jpg")
+   image_base64 = get_base64_of_image("assets/pexels-pixabay-158651.jpg")
     st.markdown(
         f"""
         <style>
