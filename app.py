@@ -39,8 +39,10 @@ BACKUP_API_KEY = "cb31a32329724d17a93a862062306786"
 
 # Background image
 def get_base64_of_image(image_path):
-    with open(image_path, "rb") as image_file:
-        return base64.b64encode(image_file.read()).decode()
+    with open(image_path, "rb") as img_file:
+        return base64.b64encode(img_file.read()).decode()
+# Usage:
+image_base64 = get_base64_of_image("pexels-pixabay-158651.jpg")
 
 # Function to extract keywords (nouns/important words) from a text
 def extract_keywords(text):
