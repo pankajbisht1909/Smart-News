@@ -4,14 +4,26 @@ from transformers import pipeline
 import requests
 import textwrap
 import base64
-import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 import re
+import nltk
+from nltk.data import find
 
-# Download NLTK resources (for the first time)
-nltk.download('punkt')
-nltk.download('stopwords')
+def safe_nltk_download(package_name):
+    try:
+        # Check location based on package type
+        if package_name == 'punkt':
+            find('tokenizers/punkt')
+        elif package_name == 'stopwords':
+            find('corpora/stopwords')
+    except LookupError:
+        nltk.download(package_name, quiet=True)
+
+# Ensure required NLTK data is available
+safe_nltk_download('punkt')
+safe_nltk_download('stopwords')
+
 
 # MongoDB Connection
 client = MongoClient("mongodb://localhost:27017/")
@@ -248,6 +260,22 @@ def run():
             if session_key not in st.session_state:
                 st.session_state[session_key] = fetch_news_from_online_source(selected, count)
             display_news_from_online(st.session_state[session_key], count)  
+    elif category_option == 'Search🔍 Topic':
+        st.subheader("Search News 🔍")
+        search_input = st.text_input("Enter your topic (e.g., elections, space, economy):")
+        count = st.slider('Number of Articles:', 5, 15, 5)
+
+        if search_input:
+            # Fetch news from online sources (GNews or NewsAPI)
+            st.info("Fetching news online...")
+            online_data = fetch_news_from_online_source(search_input, count)
+
+            if online_data:
+                display_news_from_online(online_data, count)
+            else:
+                st.warning("No articles found for your search. Please try a different topic.")
+
 
 if __name__ == "__main__":
     run()
+
