@@ -217,7 +217,7 @@ def display_news_from_online(news_data, news_quantity):
 
 # Main App
 def run():
-   image_base64 = get_base64_of_image("assets/pexels-pixabay-158651.jpg")
+    image_base64 = get_base64_of_image("assets/pexels-pixabay-158651.jpg")
     st.markdown(
         f"""
         <style>
