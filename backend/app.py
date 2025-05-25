@@ -12,7 +12,6 @@ import time
 import threading
 import email.utils
 
-# Additional imports for updated credibility scoring
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from urllib.parse import urlparse
