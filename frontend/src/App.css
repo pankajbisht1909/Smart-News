@@ -1,0 +1,119 @@
+.news-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+
+  background-image: url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  color: #fff;
+}
+
+.news-inner {
+  width: 900px;
+  max-width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  color: #222;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.news-select {
+  padding: 12px 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline-color: #667eea;
+  transition: outline-color 0.3s ease;
+}
+
+.news-select:focus {
+  outline-color: #764ba2;
+}
+
+.topic-input-container {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.topic-input {
+  padding: 10px;
+  flex: 1 1 200px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline-color: #667eea;
+  transition: outline-color 0.3s ease;
+}
+
+.topic-input:focus {
+  outline-color: #764ba2;
+}
+
+.article-card {
+  margin: 20px 0;
+  padding: 20px 25px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  color: #222;
+}
+
+.summary-box {
+  max-height: 300px;
+  overflow: auto;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 10px;
+  white-space: pre-line;
+  font-size: 15px;
+  font-weight: 600;
+  color: #222;
+  transition: max-height 0.5s ease-in-out, padding 0.3s;
+}
+
+.article-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin: 10px 0 15px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.button {
+  margin-top: 10px;
+  cursor: pointer;
+  background-color: #667eea;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover:not(:disabled) {
+  background-color: #764ba2;
+}
+
+.button:disabled {
+  cursor: default;
+  background-color: lightgreen !important;
+  color: #333;
+}
